@@ -94,6 +94,7 @@
     max-width: 375px;
     font-family: var(--ff-base);
     background-color: var(--clr--ntr-white);
+  
   }
 
   @media (min-width: 500px) {
@@ -101,6 +102,8 @@
         max-width: 550px;
         --content-padding: 2rem;
         grid-template-columns: 1fr 1fr;
+        box-shadow: 0.01rem 0.01rem 2rem var(--clr--primary-op-cobaltblue);
+        border-radius: 30px;
     }
   }
 
