@@ -96,9 +96,9 @@
     background-color: var(--clr--ntr-white);
   }
 
-  @media (min-width: 615px) {
+  @media (min-width: 500px) {
     .component {
-        max-width: 615px;
+        max-width: 550px;
         --content-padding: 2rem;
         grid-template-columns: 1fr 1fr;
     }
@@ -114,7 +114,7 @@
     overflow: hidden;
   }
 
-  @media (min-width: 615px) {
+  @media (min-width: 500px) {
     .results {
         border-radius: 30px;
     }
@@ -162,8 +162,8 @@
     font-size: 15px;
     font-weight: var(--fw-regular-500);
     color: var(--clr--ntr-lightlavendere);
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     padding-bottom: 2rem;
     padding-top: 2rem;
   }
@@ -219,7 +219,6 @@
 
   .container__item {
     display: flex;
-    justify-content: space-between;
     justify-content: flex-start ;
   }
   
