@@ -96,9 +96,9 @@
     background-color: var(--clr--ntr-white);
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 615px) {
     .component {
-        max-width: 800px;
+        max-width: 615px;
         --content-padding: 2rem;
         grid-template-columns: 1fr 1fr;
     }
@@ -114,7 +114,7 @@
     overflow: hidden;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 615px) {
     .results {
         border-radius: 30px;
     }
