@@ -83,6 +83,12 @@
     line-height: 1.1;
   }
 
+  body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+  }
+
   .component {
     display: grid;
     max-width: 375;
