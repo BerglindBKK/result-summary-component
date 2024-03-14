@@ -1,0 +1,259 @@
+:root{
+    /* setting global variables */
+
+    /*colors*/
+    /*primary*/
+    --clr--primary-lightred: hsl(0, 100%, 67%);
+    --clr--primary-oryellow: hsl(39, 100%, 56%);
+    --clr--primary-greenteal: hsl(166, 100%, 37%);
+    --clr--primary-cobaltblue: hsl(234, 85%, 45%);
+
+    /* primary opacity */
+    --clr--primary-op-lightred: hsla(0, 100%, 67%, 0.1);
+    --clr--primary-op-oryellow: hsl(39, 100%, 56%, 0.1);
+    --clr--primary-op-greenteal: hsl(166, 100%, 37%, 0.1);
+    --clr--primary-op-cobaltblue: hsl(234, 85%, 45%, 0.1);
+
+    /*gradients*/
+    --clr--grad-bckgr-slateblue: hsl(252, 100%, 67%);
+    --clr--grad-bckgr-royalblue: hsl(241, 81%, 54%);
+    
+    /* gradients circle */
+    --clr--grad-bckgr-violetblue: hsla(256, 72%, 46%, 1);
+    --clr--grad-bckgr-persianblue: hsla(241, 72%, 46%, 0);
+
+    /*neutral*/
+    --clr--ntr-white: hsl(0, 0%, 100%);
+    --clr--ntr-paleblue: hsl(221, 100%, 96%);
+    --clr--ntr-lightlavender: hsl(241, 100%, 89%);
+    --clr--ntr-darkgreyblue: hsl(224, 30%, 27%);
+
+    --clr--ntr-op-darkgreyblue: hsl(224, 30%, 27%, 0.5);
+
+
+    --ff-base: "Hanken Grotesk", sans-serif;
+    --fw-regular-500: 500;
+    --fw-bold-700: 700;
+    --fw-bold-800: 800;
+}
+
+/*reset*/
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+/* *, *::before, *::after {
+    box-sizing: border-box;
+  } */
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  h1, h2, h3 {
+    line-height: 1.1;
+  }
+
+  .component {
+    display: grid;
+    max-width: 375;
+    font-family: var(--ff-base);
+    background-color: var(--clr--ntr-white);
+  }
+
+  @media (min-width: 600px) {
+    .component {
+        --content-padding: 2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .results {
+    text-align: center;
+    font-size: 18px;
+    color: var(--clr--ntr-lightlavender);
+    background: linear-gradient(180deg, var(--clr--grad-bckgr-slateblue) 0%, var(--clr--grad-bckgr-royalblue) 100%); 
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+  }
+
+  @media (min-width: 600px) {
+    .results {
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 0px;
+    }
+  }
+
+  .results__title {
+    font-size: 15px;
+    padding: 1.4rem;
+    font-weight: var(--fw-bold-700); 
+  }
+
+  .results__circle {
+    height: 130px;
+    width: 130px;
+    background: linear-gradient(180deg, var(--clr--grad-bckgr-violetblue) 0%, var(--clr--grad-bckgr-persianblue) 100%); 
+    margin: auto;
+    border-radius: 10rem;
+    overflow: hidden;
+    display: grid;
+    place-content: center;
+  }
+
+  .results__score {
+    font-size: 45px;
+    font-weight: var(--fw-bold-800);
+    color: var(--clr--ntr-white);
+  }
+
+  .results__oftotal {
+    font-size: 14px;
+    font-weight: var(--fw-bold-700);
+    color: var(--clr--ntr-lightlavender);
+    opacity: 0.5;
+  }
+
+  .results__grade {
+    font-size: 20px;
+    font-weight: var(--fw-bold-700);
+    color: var(--clr--ntr-white);
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .results__relative {
+    font-size: 14px;
+    font-weight: var(--fw-regular-500);
+    color: var(--clr--ntr-lightlavendere);
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 2rem;
+  }
+
+  .summary__title {
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    padding: 1rem;
+    font-size: 16px;
+    font-weight: var(--fw-bold-700);
+    color: var(--clr--ntr-lightlavendere);
+  }
+
+  .summary {
+    padding: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    font-size: 14px;
+    font-weight: var(--fw-bold-700);
+    border-radius: 10px;
+  }
+
+  .totalscore {
+    color: var(--clr--ntr-op-darkgreyblue);
+  }
+
+
+  #reaction {
+    background-color: var(--clr--primary-op-lightred);
+    color: var(--clr--primary-lightred);
+  }
+
+  #memory {
+    background-color: var(--clr--primary-op-oryellow);
+    color: var(--clr--primary-oryellow);
+  }
+
+  #verbal {
+    background-color: var(--clr--primary-op-greenteal);
+    color: var(--clr--primary-greenteal);
+  }
+
+  #visual {
+    background-color: var(--clr--primary-op-cobaltblue);
+    color: var(--clr--primary-cobaltblue);
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .container__item {
+    display: flex;
+    justify-content: flex-start ;
+  }
+  
+  .container__content {
+    display: flex;
+    justify-content: right;
+    color: var(--clr--ntr-darkgreyblue);
+  }
+  
+  .container__category {
+    margin-left: 10px;
+  }
+  
+  .score {
+    margin-right: 0px;
+    text-align: right;
+  }
+
+  .button {
+    place-content: center;
+    text-align: center;
+    font-weight: var(--fw-bold-700);
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 5rem;
+    background-color: var(--clr--ntr-darkgreyblue);
+    color: var(--clr--ntr-white);
+    margin-top: 0.5rem;
+  }
+
+  .button:is(:hover) {
+    background: linear-gradient(180deg, var(--clr--grad-bckgr-slateblue) 0%, var(--clr--grad-bckgr-royalblue) 100%);
+  }
+
+  .attribution { 
+    font-size: 11px; text-align: center; 
+  }
+    
+  .attribution a { 
+    color: hsl(228, 45%, 44%); 
+  }
+

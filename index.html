@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- link to css file -->
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+
+  <!-- json data, did not figure out how to fetch it from the file without screwing everything up-->
+  <script type="text/javascript">
+
+    let results =
+    [
+      {
+        "category": "Reaction",
+        "score": 80,
+        "icon": "./assets/images/icon-reaction.svg"
+      },
+      {
+        "category": "Memory",
+        "score": 92,
+        "icon": "./assets/images/icon-memory.svg"
+      },
+      {
+        "category": "Verbal",
+        "score": 61,
+        "icon": "./assets/images/icon-verbal.svg"
+      },
+      {
+        "category": "Visual",
+        "score": 72,
+        "icon": "./assets/images/icon-visual.svg"
+      }
+    ]
+
+  //  console.log(JSON.parse(results));
+  //  JSON.parse(results);
+  </script>
+
+<!-- Component card with results and summary-->
+  <div class="component">
+    <!-- result section -->
+    <div class="results">
+      <div class="results__title">Your Result</div>
+      <div class="results__circle">
+        <div class="results__score">76</div>
+        <div class="results__oftotal">of 100</div>
+      </div>
+      <div class="results__grade">Great</div>
+      <div class="results__relative">You scored higher than 65% of the people who have taken these tests.</div>
+    </div>
+    
+    <!-- summary section-->
+    <div>
+      <div class="summary__title">Summary</div>
+      <div class="summary" id="reaction"></div>
+      <div class="summary" id="memory"></div>
+      <div class="summary" id="verbal"></div>
+      <div class="summary" id="visual"></div>
+      <div class="button">Continue</div>
+    </div>
+  </div>
+
+  <!-- attribution -->
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Berglind</a>.
+  </div>
+
+  <!-- json script that creates the result table content-->
+  <script>
+  for (let i = 0; i < 4; i++) {
+    const element =
+      '<div class="container">' +
+        '<div class="container__item">' +
+          '<img src="' + results[i].icon + '">' +
+          '<span class="container__category">' + results[i].category + '</span>' +
+        '</div>' +
+        '<div class="container__content">' +
+            '<span class="score">' + results[i].score + '</span>'  +
+            '<span class="totalscore"> &nbsp;/&nbsp;100</span>' 
+        '</div>'  
+      '<div>';
+
+    document.getElementById((results[i].category).toLowerCase()).innerHTML = element;
+  }
+</script>
+
+
+
+</body>
+</html>
